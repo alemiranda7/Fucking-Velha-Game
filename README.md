@@ -1,2 +1,2 @@
-# Jogo-da-Velha
+# Fucking-Velha-Game
  Exercicio de fixação do curso JS da plataforma udemy.
