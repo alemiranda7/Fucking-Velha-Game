@@ -39,7 +39,7 @@ for (let i = 0; i < boxes.length; i++) {
 
 
 //FUNÇÃO PRA VER QUEM GANHA
-function checkWinConditional(){
+function checkWinConditional() {
     let b1box = document.getElementById('block-1')
     let b2box = document.getElementById('block-2')
     let b3box = document.getElementById('block-3')
@@ -52,45 +52,108 @@ function checkWinConditional(){
 
 
     //HORIZONTAIS
-    if(b1box.childNodes.length > 0 && b2box.childNodes.length > 0 && b3box.childNodes.length >0){
+    if (b1box.childNodes.length > 0 && b2box.childNodes.length > 0 && b3box.childNodes.length > 0) {
         let b1Child = b1box.childNodes[0].className
         let b2Child = b2box.childNodes[0].className
         let b3Child = b3box.childNodes[0].className
-        if(b1Child == 'x' && b2Child == 'x' && b3Child == 'x'){
+        if (b1Child == 'x' && b2Child == 'x' && b3Child == 'x') {
             //x ganhou
             console.log('o X ganhou')
-        }else if(b1Child == 'o' && b2Child == 'o' && b3Child == 'o'){
+        } else if (b1Child == 'o' && b2Child == 'o' && b3Child == 'o') {
             //o ganhou
             console.log('o O ganhou')
         }
     }
-
-    if(b4box.childNodes.length > 0 && b5box.childNodes.length > 0 && b6box.childNodes.length > 0){
+    if (b4box.childNodes.length > 0 && b5box.childNodes.length > 0 && b6box.childNodes.length > 0) {
         let b4Child = b4box.childNodes[0].className
         let b5Child = b5box.childNodes[0].className
         let b6Child = b6box.childNodes[0].className
-        if(b4Child == 'x' && b5Child == 'x' && b6Child == 'x'){
+        if (b4Child == 'x' && b5Child == 'x' && b6Child == 'x') {
             //x ganhou
             console.log('x ganhou')
-        }else if(b4Child == 'o' && b5Child == 'o' && b6Child == 'o'){
+        } else if (b4Child == 'o' && b5Child == 'o' && b6Child == 'o') {
             //o ganhou
             console.log('o ganhou')
         }
     }
-
-
-    if(b7box.childNodes.length > 0 && b8box.childNodes.length > 0 && b9box.childNodes.length > 0){
+    if (b7box.childNodes.length > 0 && b8box.childNodes.length > 0 && b9box.childNodes.length > 0) {
         let b7Child = b7box.childNodes[0].className
         let b8Child = b8box.childNodes[0].className
         let b9Child = b9box.childNodes[0].className
-        if(b7Child == 'x' && b8Child == 'x' && b9Child == 'x'){
+        if (b7Child == 'x' && b8Child == 'x' && b9Child == 'x') {
             //x ganhou
             console.log('x ganhou')
-        }else if(b7Child == 'o' && b8Child == 'o' && b9Child == 'o'){
+        } else if (b7Child == 'o' && b8Child == 'o' && b9Child == 'o') {
             //o ganhou
             console.log('o ganhou')
         }
     }
+
+    //VERTICAIS
+    if (b1box.childNodes.length > 0 && b4box.childNodes.length > 0 && b7box.childNodes.length > 0) {
+        let b1Child = b1box.childNodes[0].className
+        let b4Child = b4box.childNodes[0].className
+        let b7Child = b7box.childNodes[0].className
+        if (b1Child == 'x' && b4Child == 'x' && b7Child == 'x') {
+            console.log('x ganhou')
+        } else if (b1Child == 'o' && b4Child == 'o' && b7Child == 'o') {
+            console.log('o ganhou')
+        }
+    }
+    if (b2box.childNodes.length > 0 && b5box.childNodes.length > 0 && b8box.childNodes.length > 0) {
+        let b2Child = b2box.childNodes[0].className
+        let b5Child = b5box.childNodes[0].className
+        let b8Child = b8box.childNodes[0].className
+        if (b2Child == 'x' && b5Child == 'x' && b8Child == 'x') {
+            console.log('x ganhou')
+        } else if (b2Child == 'o' && b5Child == 'o' && b8Child == 'o') {
+            console.log('o ganhou')
+        }
+    }
+    if (b3box.childNodes.length > 0 && b6box.childNodes.length > 0 && b9box.childNodes.length > 0) {
+        let b3Child = b3box.childNodes[0].className
+        let b6Child = b6box.childNodes[0].className
+        let b9Child = b9box.childNodes[0].className
+        if (b3Child == 'x' && b6Child == 'x' && b9Child == 'x') {
+            console.log('x ganhou')
+        } else if (b3Child == 'o' && b6Child == 'o' && b9Child == 'o') {
+            console.log('o ganhou')
+        }
+    }
+
+    //DIAGONAIS
+    if (b1box.childNodes.length > 0 && b5box.childNodes.length > 0 && b9box.childNodes.length > 0) {
+        let b1Child = b1box.childNodes[0].className
+        let b5Child = b5box.childNodes[0].className
+        let b9Child = b9box.childNodes[0].className
+        if (b1Child == 'x' && b5Child == 'x' && b9Child == 'x') {
+            console.log('x ganhou')
+        } else if (b1Child == 'o' && b5Child == 'o' && b9Child == 'o') {
+            console.log('o ganhou')
+        }
+    }
+    if (b7box.childNodes.length > 0 && b5box.childNodes.length > 0 && b3box.childNodes.length > 0) {
+        let b7Child = b7box.childNodes[0].className
+        let b5Child = b5box.childNodes[0].className
+        let b3Child = b3box.childNodes[0].className
+        if (b7Child == 'x' && b5Child == 'x' && b3Child == 'x') {
+            console.log('x ganhou')
+        } else if (b7Child == 'o' && b5Child == 'o' && b3Child == 'o') {
+            console.log('o ganhou')
+        }
+    }
+
+    //GALOU
+    let counter = 0
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].childNodes[0] != undefined) {
+            counter++
+        }
+    }
+    if (counter == 9) {
+        console.log('galou!')
+    }
+
 }
 
 
