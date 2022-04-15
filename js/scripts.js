@@ -176,16 +176,31 @@ function declareWinner(winner) {
     let score2 = document.querySelector('#scoreboard-2')
     let msg = ''
 
-    if(winner == 'x'){
+    if (winner == 'x') {
         score1.textContent = parseInt(score1.textContent) + 1
         msg = 'O jogador 1 venceu'
-    }else if(winner == 'o'){
+    } else if (winner == 'o') {
         score2.textContent = parseInt(score2.textContent) + 1
         msg = 'O jogador 2 venceu'
-    }else{
+    } else {
         msg = 'GALOU'
     }
 
     messageText.innerHTML = msg
     messageContainer.classList.remove('hide')
+
+    //esconde mensagem
+    setTimeout(function(){
+        messageContainer.classList.add('hide')
+    },1000)
+
+    
+    player1 = 0
+    player2 = 0
+
+    //remove as marcações no tabuleiro
+    let boxToRemove = document.querySelectorAll('.box div')
+    for(let i = 0; i < boxToRemove.length; i++){
+        boxToRemove[i].parentNode.removeChild(boxToRemove[i])
+    }
 }
