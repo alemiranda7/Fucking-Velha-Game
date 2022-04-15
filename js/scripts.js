@@ -40,7 +40,7 @@ for (let i = 0; i < boxes.length; i++) {
 
 //FUNÇÃO PRA VER QUEM GANHA
 function checkWinConditional() {
-    let b1box = document.getElementById('block-1')
+    let b1box = document.querySelector('#block-1')
     let b2box = document.getElementById('block-2')
     let b3box = document.getElementById('block-3')
     let b4box = document.getElementById('block-4')
@@ -58,10 +58,10 @@ function checkWinConditional() {
         let b3Child = b3box.childNodes[0].className
         if (b1Child == 'x' && b2Child == 'x' && b3Child == 'x') {
             //x ganhou
-            console.log('o X ganhou')
+            declareWinner('x')
         } else if (b1Child == 'o' && b2Child == 'o' && b3Child == 'o') {
             //o ganhou
-            console.log('o O ganhou')
+            declareWinner('o')
         }
     }
     if (b4box.childNodes.length > 0 && b5box.childNodes.length > 0 && b6box.childNodes.length > 0) {
@@ -70,10 +70,10 @@ function checkWinConditional() {
         let b6Child = b6box.childNodes[0].className
         if (b4Child == 'x' && b5Child == 'x' && b6Child == 'x') {
             //x ganhou
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b4Child == 'o' && b5Child == 'o' && b6Child == 'o') {
             //o ganhou
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
     if (b7box.childNodes.length > 0 && b8box.childNodes.length > 0 && b9box.childNodes.length > 0) {
@@ -82,10 +82,10 @@ function checkWinConditional() {
         let b9Child = b9box.childNodes[0].className
         if (b7Child == 'x' && b8Child == 'x' && b9Child == 'x') {
             //x ganhou
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b7Child == 'o' && b8Child == 'o' && b9Child == 'o') {
             //o ganhou
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
 
@@ -95,9 +95,9 @@ function checkWinConditional() {
         let b4Child = b4box.childNodes[0].className
         let b7Child = b7box.childNodes[0].className
         if (b1Child == 'x' && b4Child == 'x' && b7Child == 'x') {
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b1Child == 'o' && b4Child == 'o' && b7Child == 'o') {
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
     if (b2box.childNodes.length > 0 && b5box.childNodes.length > 0 && b8box.childNodes.length > 0) {
@@ -105,9 +105,9 @@ function checkWinConditional() {
         let b5Child = b5box.childNodes[0].className
         let b8Child = b8box.childNodes[0].className
         if (b2Child == 'x' && b5Child == 'x' && b8Child == 'x') {
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b2Child == 'o' && b5Child == 'o' && b8Child == 'o') {
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
     if (b3box.childNodes.length > 0 && b6box.childNodes.length > 0 && b9box.childNodes.length > 0) {
@@ -115,9 +115,9 @@ function checkWinConditional() {
         let b6Child = b6box.childNodes[0].className
         let b9Child = b9box.childNodes[0].className
         if (b3Child == 'x' && b6Child == 'x' && b9Child == 'x') {
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b3Child == 'o' && b6Child == 'o' && b9Child == 'o') {
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
 
@@ -127,9 +127,9 @@ function checkWinConditional() {
         let b5Child = b5box.childNodes[0].className
         let b9Child = b9box.childNodes[0].className
         if (b1Child == 'x' && b5Child == 'x' && b9Child == 'x') {
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b1Child == 'o' && b5Child == 'o' && b9Child == 'o') {
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
     if (b7box.childNodes.length > 0 && b5box.childNodes.length > 0 && b3box.childNodes.length > 0) {
@@ -137,9 +137,9 @@ function checkWinConditional() {
         let b5Child = b5box.childNodes[0].className
         let b3Child = b3box.childNodes[0].className
         if (b7Child == 'x' && b5Child == 'x' && b3Child == 'x') {
-            console.log('x ganhou')
+            declareWinner('x')
         } else if (b7Child == 'o' && b5Child == 'o' && b3Child == 'o') {
-            console.log('o ganhou')
+            declareWinner('o')
         }
     }
 
@@ -151,7 +151,7 @@ function checkWinConditional() {
         }
     }
     if (counter == 9) {
-        console.log('galou!')
+        declareWinner()
     }
 
 }
@@ -168,4 +168,24 @@ function quemJoga(player1, player2) {
     }
 
     return el
+}
+
+//FUNÇÃO LIMPO O JOGO, DECLARA O VENCEDOR E ATUALIZA O PLACAR
+function declareWinner(winner) {
+    let score1 = document.querySelector('#scoreboard-1')
+    let score2 = document.querySelector('#scoreboard-2')
+    let msg = ''
+
+    if(winner == 'x'){
+        score1.textContent = parseInt(score1.textContent) + 1
+        msg = 'O jogador 1 venceu'
+    }else if(winner == 'o'){
+        score2.textContent = parseInt(score2.textContent) + 1
+        msg = 'O jogador 2 venceu'
+    }else{
+        msg = 'GALOU'
+    }
+
+    messageText.innerHTML = msg
+    messageContainer.classList.remove('hide')
 }

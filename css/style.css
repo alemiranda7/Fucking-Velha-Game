@@ -79,6 +79,10 @@ h1 {
 
 /*Placar*/
 
+.hide{
+    display: none;
+}
+
 #scoreboard-container {
     font-weight: bold;
     margin-top: 30px;
