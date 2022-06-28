@@ -1,8 +1,11 @@
-var button = document.querySelector('.login-button')
+let button = document.querySelector('.login-button')
 
-var loginGame = (click) => {
+/*let loginGame = (event) => {
     event.preventDefault()
     window.location = '../pages/index.html'
-}
+}*/
 
-button.addEventListener('click', loginGame)
+button.addEventListener('click', (event) => {
+    event.preventDefault()
+    window.location = '../pages/index.html'
+})
