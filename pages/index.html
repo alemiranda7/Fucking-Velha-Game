@@ -6,22 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
     <title>Jogo da Velha</title>
-    <script defer src="../js/scripts.js"></script>
-    <script defer src="../js/login.js"></script>
+    <script defer src="../js/game.js"></script>
+    
 </head>
 
 <body>
-    <h1>Jogo da Velha</h1>
    
-    <!--botões-->
-    <div id="buttons-container" class="hide">
-        <button id="2-player">2 Jogadores</button>
-        <button id="ai-player">Contra a IA</button>
-    </div>
+    <h1>Jogo da Velha</h1>
 
     <!--linhas do tabuleiro-->
-    <div id="container" class="hide">
+    <div id="container" class="">
         <div class="box" id="block-1"></div>
         <div class="box" id="block-2"></div>
         <div class="box" id="block-3"></div>
@@ -49,7 +45,7 @@
     <!--XIS E BOLA EXEMPLOS-->
     <div class="hide">
         <div class="x">X</div>
-        <div class="o"></div>
+        <div class="o">O</div>
     </div>
 
     <!--Mensagem de vencedor ou galou-->
