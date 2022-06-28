@@ -1,0 +1,32 @@
+body{
+    background-color: #fff;
+}
+
+.container{
+    
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login-button {
+  background-color: #4CAF50; /* Green */
+  border-radius: 8%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+img {
+    max-width:500px;
+    max-height:500px;
+    width: auto;
+    height: auto;
+}
